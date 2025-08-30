@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+# Disallow admin and API routes
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /dashboard
+Disallow: /billing
+
+# Allow important pages
+Allow: /pricing
+Allow: /how-it-works
+Allow: /changelog
+
+# Sitemap location
+Sitemap: https://seveniq.com/sitemap.xml
+
+# Crawl delay (optional)
+Crawl-delay: 1
