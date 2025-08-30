@@ -474,4 +474,3 @@ export function validateAndSanitizeInput(
 }
 
 // Export the class for testing
-export { SecurityMiddleware }

@@ -6,6 +6,40 @@ import { supabase } from './supabase'
 import { db } from './supabase'
 import { config } from './config'
 
+// Helper function to create mock user
+const createMockUser = (email: string): User => ({
+  id: 'demo-user-' + Date.now(),
+  email: email,
+  user_metadata: { full_name: email.split('@')[0] },
+  app_metadata: { provider: 'demo' },
+  aud: 'authenticated',
+  created_at: new Date().toISOString(),
+  updated_at: new Date().toISOString(),
+  role: 'authenticated',
+  email_confirmed_at: new Date().toISOString(),
+  last_sign_in_at: new Date().toISOString(),
+  phone: undefined,
+  confirmation_sent_at: undefined,
+  confirmed_at: undefined,
+  email_change: undefined,
+  email_change_sent_at: undefined,
+  recovery_sent_at: undefined,
+  banned_until: undefined,
+  reauthentication_sent_at: undefined,
+  reauthentication_confirmed_at: undefined,
+  phone_confirmed_at: undefined,
+  phone_change: undefined,
+  phone_change_sent_at: undefined,
+  last_sign_in_with: undefined,
+  factors: undefined,
+  identities: undefined,
+  raw_app_meta_data: { provider: 'demo' },
+  raw_user_meta_data: { full_name: email.split('@')[0] },
+  is_super_admin: undefined,
+  is_sso_user: false,
+  deleted_at: undefined
+} as User)
+
 interface AuthContextType {
   user: User | null
   session: Session | null
@@ -77,12 +111,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     try {
       // Demo mode - create mock user
       if (!config.features.enableSupabase) {
-        const mockUser = {
-          id: 'demo-user-' + Date.now(),
-          email: email,
-          user_metadata: { full_name: email.split('@')[0] },
-          app_metadata: { provider: 'demo' }
-        } as User
+        const mockUser = createMockUser(email)
         
         const mockSession = {
           user: mockUser,
@@ -112,12 +141,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     try {
       // Demo mode - create mock user
       if (!config.features.enableSupabase) {
-        const mockUser = {
-          id: 'demo-user-' + Date.now(),
-          email: email,
-          user_metadata: { full_name: email.split('@')[0] },
-          app_metadata: { provider: 'demo' }
-        } as User
+        const mockUser = createMockUser(email)
         
         const mockSession = {
           user: mockUser,
@@ -147,12 +171,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     try {
       // Demo mode - create mock user
       if (!config.features.enableSupabase) {
-        const mockUser = {
-          id: 'demo-user-' + Date.now(),
-          email: email,
-          user_metadata: { full_name: email.split('@')[0] },
-          app_metadata: { provider: 'demo' }
-        } as User
+        const mockUser = createMockUser(email)
         
         const mockSession = {
           user: mockUser,

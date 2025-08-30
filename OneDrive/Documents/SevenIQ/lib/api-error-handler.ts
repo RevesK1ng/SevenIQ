@@ -144,11 +144,11 @@ export function withErrorHandling<T extends any[], R>(
   }
 }
 
-export function validateRequest(
+export async function validateRequest(
   request: NextRequest,
   requiredFields: string[] = [],
   optionalFields: string[] = []
-): { isValid: boolean; errors: string[]; data: any } {
+): Promise<{ isValid: boolean; errors: string[]; data: any }> {
   const errors: string[] = []
   let data: any = {}
 
@@ -160,9 +160,9 @@ export function validateRequest(
         data = request.json ? await request.json() : {}
       } else if (contentType?.includes('application/x-www-form-urlencoded')) {
         const formData = await request.formData()
-        for (const [key, value] of formData.entries()) {
+        formData.forEach((value, key) => {
           data[key] = value
-        }
+        })
       }
     }
 

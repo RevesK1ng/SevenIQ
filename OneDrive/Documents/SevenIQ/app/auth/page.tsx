@@ -107,7 +107,7 @@ export default function AuthPage() {
   if (isMagicLinkSent) {
     return (
       <div className="min-h-screen bg-background">
-        <Nav variant="marketing" />
+        <Nav />
         <div className="flex items-center justify-center min-h-[calc(100vh-4rem)] p-4">
           <div className="max-w-md w-full">
             <div className="card text-center">
@@ -133,7 +133,7 @@ export default function AuthPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <Nav variant="marketing" />
+      <Nav />
       
       {/* Disclaimer Banner */}
       <div className="bg-amber-50 border-b border-amber-200">

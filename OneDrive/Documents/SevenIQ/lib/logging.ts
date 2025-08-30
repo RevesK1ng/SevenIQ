@@ -494,6 +494,5 @@ export function useLogger(): Logger {
   return logger
 }
 
-// Export types and classes
-export { Logger, LogTransport, ConsoleTransport, FileTransport, RemoteTransport }
-export type { LogEntry, LoggerConfig }
+// Export classes
+export { Logger, ConsoleTransport, FileTransport, RemoteTransport }

@@ -46,8 +46,6 @@ export default defineConfig({
     hookTimeout: 10000,
     teardownTimeout: 10000,
     maxConcurrency: 5,
-    minThreads: 1,
-    maxThreads: 4,
     pool: 'forks',
     poolOptions: {
       forks: {

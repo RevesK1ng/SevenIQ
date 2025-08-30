@@ -112,10 +112,10 @@ class PerformanceMonitor {
         const longTaskObserver = new PerformanceObserver((list) => {
           list.getEntries().forEach((entry) => {
             if (entry.entryType === 'longtask') {
-              const longTaskEntry = entry as PerformanceLongTaskTiming
-              this.recordMetric('long_task_duration', longTaskEntry.duration, {
-                startTime: longTaskEntry.startTime,
-                name: longTaskEntry.name
+              const longTaskEntry = entry as PerformanceEntry
+              this.recordMetric('long_task_duration', longTaskEntry.duration || 0, {
+                startTime: longTaskEntry.startTime || 0,
+                name: longTaskEntry.name || 'unknown'
               })
             }
           })
