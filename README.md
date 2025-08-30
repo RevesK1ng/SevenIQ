@@ -6,7 +6,8 @@ SevenIQ is a modern web app built with TypeScript and Next.js 13+ that simplifie
 ## 🚀 Live Demo
 [View Live Site](https://your-live-link-here)
 
-![SevenIQ Screenshot](images/screenshot.png)
+![SevenIQ Screenshot](<img width="1908" height="946" alt="Screenshot 2025-08-30 121627" src="https://github.com/user-attachments/assets/5d562459-6db4-4627-a7db-51bb3cf788cb" />
+png)
 
 ## 🛠 Tech Stack
 - **TypeScript** — Strongly typed JavaScript for safer, more maintainable code
